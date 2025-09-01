@@ -35,11 +35,6 @@ export const App: React.FC = () => {
     <div className="container">
       <h1>Items with Pagination</h1>
 
-      <p className="lead" data-cy="info">
-        Page {currentPage} (items {startIndex + 1} -{' '}
-        {endIndex > items.length ? items.length : endIndex} of 42)
-      </p>
-
       <div className="form-group row">
         <div className="col-3 col-sm-2 col-xl-1">
           <select

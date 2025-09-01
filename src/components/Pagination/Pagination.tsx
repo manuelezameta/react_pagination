@@ -14,8 +14,15 @@ export const Pagination = ({
   const totalPages: number = Math.ceil(total / perPage);
   const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
 
+  const start = total === 0 ? 0 : (currentPage - 1) * perPage + 1;
+  const end = total === 0 ? 0 : Math.min(currentPage * perPage, total);
+
   return (
     <div>
+      <p className="lead" data-cy="info">
+        Page {currentPage} (items {start} - {end} of {total})
+      </p>
+
       <ul className="pagination">
         <li className={currentPage === 1 ? 'page-item disabled' : 'page-item'}>
           <a
